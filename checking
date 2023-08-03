@@ -1,543 +1,1092 @@
-[{'_id': {'$oid': '6492f6b3f99c6169540b9b2e'},
-  'doc': {'tranID': '86d540ed4c4a45b3103',
-   'version': '12.0',
-   'docType': 'FOBS',
-   'eventType': '',
-   'source': '281206034685-01012023',
-   'timeStamp': '2023-06-21 13:08:02.486',
-   'createdBy': 'SydneyNLS',
-   'contentType': 'application/json',
-   'extension': {'outcome': '', 'errors': []},
-   'data': {'contract': {'code': '',
-     'name': '',
-     'effectiveDate': '01012023',
-     'expiryDate': '',
-     'state': '',
-     'marketSegment': 'LG',
-     'fobsLastUpdated': '',
-     'referralRequired': '',
-     'businessEntity': '',
-     'status': '',
-     'source': 'FOBS',
-     'plan': [{'code': '281206034685',
-       'name': 'Marriott International 20230101 HDHP Bronze 2REV 2REZ 7CWF',
-       'type': 'Medical'}],
-     'originalSource': 'WPD'},
-    'group': {'id': '281206034685',
-     'name': 'Marriott International',
-     'effectiveDate': '01012023',
-     'startDate': '',
-     'case': '',
-     'status': '',
-     'docVersion': '',
-     'inActiveInd': '',
-     'docEffDt': '2023-01-01 00:00:00.000Z',
-     'docEndDt': '2023-12-31 23:59:59.000Z'},
-    'benefits': [{'name': 'Deductible',
-      'benefitsSystemID': '68582c2b-7f3f-4f1b-8b48-a81836dba367',
-      'parentCategory': '',
-      'minAge': '0',
-      'maxAge': '999',
-      'ageType': 'Years',
-      'components': [],
-      'level': 'Plan',
-      'type': 'Medical',
-      'cpt': [],
-      'networks': [{'type': 'In Network',
-        'networkCode': 'INN',
-        'costShares': [{'benefitType': 'Deductible',
-          'benefitOptDesc': 'Deductibles - Individual',
-          'value': '$3500',
-          'coverageLevel': 'Individual',
-          'coverageLevelInd': 'IND',
-          'period': 'Per Year',
-          'accumName': 'PINDED',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Deductible',
-          'benefitOptDesc': 'Deductibles - Family',
-          'value': '$7000 Non-Embedded',
-          'coverageLevel': 'Family',
-          'coverageLevelInd': 'FAM',
-          'period': 'Per Year',
-          'accumName': 'PFMDED',
-          'accumBasis': 'Non-Embedded',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False},
-       {'type': 'Out of Network',
-        'networkCode': 'OON',
-        'costShares': [{'benefitType': 'Deductible',
-          'benefitOptDesc': 'Deductibles - Individual',
-          'value': '$7000',
-          'coverageLevel': 'Individual',
-          'coverageLevelInd': 'IND',
-          'period': 'Per Year',
-          'accumName': 'NINDED',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Deductible',
-          'benefitOptDesc': 'Deductibles - Family',
-          'value': '$14000 Non-Embedded',
-          'coverageLevel': 'Family',
-          'coverageLevelInd': 'FAM',
-          'period': 'Per Year',
-          'accumName': 'NFMDED',
-          'accumBasis': 'Non-Embedded',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False}],
-      'attributes': [],
-      'notes': [],
-      'categories': [],
-      'related': {'services': []},
-      'shared': {'accum': []},
-      'placeOfService': [],
-      'conditions': [],
-      'limitations': [],
-      'srvcDefnId': [],
-      'hierarchy': []},
-     {'name': 'Coinsurance',
-      'benefitsSystemID': '3246f744-ded7-4c2b-8ec5-1d4e34e23f54',
-      'parentCategory': '',
-      'minAge': '0',
-      'maxAge': '999',
-      'ageType': 'Years',
-      'components': [],
-      'level': 'Plan',
-      'type': 'Medical',
-      'cpt': [],
-      'networks': [{'type': 'In Network',
-        'networkCode': 'INN',
-        'costShares': [{'benefitType': 'Coinsurance',
-          'benefitOptDesc': 'Coinsurance - Plan',
-          'value': '30%',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Coinsurance',
-          'benefitOptDesc': 'Preventive Level of Coinsurance - Plan',
-          'value': '0%',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False},
-       {'type': 'Out of Network',
-        'networkCode': 'OON',
-        'costShares': [{'benefitType': 'Coinsurance',
-          'benefitOptDesc': 'Coinsurance - Plan',
-          'value': '50%',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Coinsurance',
-          'benefitOptDesc': 'Preventive Level of Coinsurance - Plan',
-          'value': '50%',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False}],
-      'attributes': [],
-      'notes': [],
-      'categories': [],
-      'related': {'services': []},
-      'shared': {'accum': []},
-      'placeOfService': [],
-      'conditions': [],
-      'limitations': [],
-      'srvcDefnId': [],
-      'hierarchy': []},
-     {'name': 'Out-of-Pocket Maximum',
-      'benefitsSystemID': 'f4d7c652-e1d0-4873-8783-367619563842',
-      'parentCategory': '',
-      'minAge': '0',
-      'maxAge': '999',
-      'ageType': 'Years',
-      'components': [],
-      'level': 'Plan',
-      'type': 'Medical',
-      'cpt': [],
-      'networks': [{'type': 'In Network',
-        'networkCode': 'INN',
-        'costShares': [{'benefitType': 'Out-of-Pocket Maximum',
-          'benefitOptDesc': 'Out of Pocket Maximum - Individual',
-          'value': '$6550',
-          'coverageLevel': 'Individual',
-          'coverageLevelInd': 'IND',
-          'period': 'Per Year',
-          'accumName': 'IINOOP',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Out-of-Pocket Maximum',
-          'benefitOptDesc': 'Out of Pocket Maximum - Family',
-          'value': '$13100 Embedded',
-          'coverageLevel': 'Family',
-          'coverageLevelInd': 'FAM',
-          'period': 'Per Year',
-          'accumName': 'FOOPPBOC',
-          'accumBasis': 'Embedded',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False},
-       {'type': 'Out of Network',
-        'networkCode': 'OON',
-        'costShares': [{'benefitType': 'Out-of-Pocket Maximum',
-          'benefitOptDesc': 'Out of Pocket Maximum - Individual',
-          'value': '$15000',
-          'coverageLevel': 'Individual',
-          'coverageLevelInd': 'IND',
-          'period': 'Per Year',
-          'accumName': 'OINOOP',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Out-of-Pocket Maximum',
-          'benefitOptDesc': 'Out of Pocket Maximum - Family',
-          'value': '$30000 Embedded',
-          'coverageLevel': 'Family',
-          'coverageLevelInd': 'FAM',
-          'period': 'Per Year',
-          'accumName': 'FOOPNPOC',
-          'accumBasis': 'Embedded',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False}],
-      'attributes': [],
-      'notes': [],
-      'categories': [],
-      'related': {'services': []},
-      'shared': {'accum': []},
-      'placeOfService': [],
-      'conditions': [],
-      'limitations': [],
-      'srvcDefnId': [],
-      'hierarchy': []},
-     {'name': 'Lifetime Maximum',
-      'benefitsSystemID': '1f9e1b25-f608-48c4-b0a4-e82abfd703bb',
-      'parentCategory': '',
-      'minAge': '0',
-      'maxAge': '999',
-      'ageType': 'Years',
-      'components': [],
-      'level': 'Plan',
-      'type': 'Medical',
-      'cpt': [],
-      'networks': [{'type': 'In Network',
-        'networkCode': 'INN',
-        'costShares': [{'benefitType': 'Lifetime Maximum',
-          'benefitOptDesc': 'Lifetime Maximum',
-          'value': 'Unlimited',
-          'coverageLevel': 'Individual',
-          'coverageLevelInd': 'IND',
-          'period': 'Per Lifetime',
-          'accumName': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False},
-       {'type': 'Out of Network',
-        'networkCode': 'OON',
-        'costShares': [{'benefitType': 'Lifetime Maximum',
-          'benefitOptDesc': 'Lifetime Maximum',
-          'value': 'Unlimited',
-          'coverageLevel': 'Individual',
-          'coverageLevelInd': 'IND',
-          'period': 'Per Lifetime',
-          'accumName': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False}],
-      'attributes': [],
-      'notes': [],
-      'categories': [],
-      'related': {'services': []},
-      'shared': {'accum': []},
-      'placeOfService': [],
-      'conditions': [],
-      'limitations': [],
-      'srvcDefnId': [],
-      'hierarchy': []},
-     {'name': 'Choice',
-      'benefitsSystemID': '068728bc-8ed8-451b-9989-1fe378e26942',
-      'parentCategory': '',
-      'minAge': '0',
-      'maxAge': '999',
-      'ageType': 'Years',
-      'components': [],
-      'level': 'Plan',
-      'type': 'Medical',
-      'cpt': [],
-      'networks': [{'type': 'In Network',
-        'networkCode': 'INN',
-        'costShares': [{'benefitType': 'Choice',
-          'benefitOptDesc': 'Deductible Standardly Applied - Non Routine Services',
-          'value': 'Deductible Standardly Applied - Non Routine Services - Yes',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False},
-       {'type': 'Out of Network',
-        'networkCode': 'OON',
-        'costShares': [{'benefitType': 'Choice',
-          'benefitOptDesc': 'Deductible Standardly Applied - Non Routine Services',
-          'value': 'Deductible Standardly Applied - Non Routine Services - Yes',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []}],
-        'notes': [],
-        'attributes': [],
-        'precertRequired': 'N',
-        'deductibleApplies': '',
-        'rollToMME': '',
-        'placeOfService': [],
-        'conditions': [],
-        'limitations': [],
-        'precertNotes': [],
-        'processAdminType': False},
-       {'type': 'ALL',
-        'networkCode': 'ALL',
-        'costShares': [{'benefitType': 'Choice',
-          'benefitOptDesc': 'Common Accident Deductible',
-          'value': 'Not Applicable',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': 'Accumulation Combination',
-          'value': 'Combined professional/institutional',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': 'Deductible - Accumulation Method',
-          'value': 'Family amount can be satisfied by a family member or a combination of family members. Non-embedded.',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': 'Deductible - Applied Method',
-          'value': 'Deductible amounts accumulate separately for In and Out of Network',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': 'Pharmacy Deductible Integrated',
-          'value': 'Yes',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': '4th Quarter Deductible Carryover',
-          'value': 'No',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'accumName': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': 'Accumulation Combination',
-          'value': 'Combined professional/institutional',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': 'Copayment Included',
-          'value': 'Yes',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': 'Deductible and Coinsurance Included',
-          'value': 'The coinsurance and deductible apply towards the out-of-pocket maximum.',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': '4th Quarter Coinsurance Carryover',
-          'value': 'No',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'accumName': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
-         {'benefitType': 'Choice',
-          'benefitOptDesc': 'Out of Pocket - Accumulation Method',
-          'value': 'Family amount can be satisfied by any combination of family members but an individual would never satisfy more than their own individual amount (embedded)',
-          'coverageLevel': '',
-          'coverageLevelInd': '',
-          'rolloverInd': '',
-          'bsisDesc': '',
-          'attributes': [],
-          'bnftInd': '',
-          'notes': []},
+json_data1="""{
+   "doc":{
+      "tranID":"a0591b9c321a455c114",
+      "version":"18.0",
+      "docType":"FOBS",
+      "eventType":"",
+      "source":"190711534958-01012023",
+      "timeStamp":"2023-06-26 11:55:26.648",
+      "createdBy":"SydneyNLS",
+      "contentType":"application/json",
+      "extension":{
+         "outcome":"",
+         "errors":[
+            
+         ]
+      },
+      "data":{
+         "contract":{
+            "code":"",
+            "name":"",
+            "effectiveDate":"01012023",
+            "expiryDate":"",
+            "state":"",
+            "marketSegment":"LG",
+            "fobsLastUpdated":"",
+            "referralRequired":"",
+            "businessEntity":"",
+            "status":"",
+            "source":"FOBS",
+            "plan":[
+               {
+                  "code":"190711534958",
+                  "name":"Capital One Financial Corporation 20230101 PPO Basic 1VR7 33E7 1Y61",
+                  "type":"Medical"
+               }
+            ],
+            "originalSource":"WPD"
+         },
+         "group":{
+            "id":"190711534958",
+            "name":"Capital One Financial Corporation",
+            "effectiveDate":"01012023",
+            "startDate":"",
+            "case":"",
+            "status":"",
+            "docVersion":"",
+            "inActiveInd":"",
+            "docEffDt":"2023-01-01 00:00:00.000Z",
+            "docEndDt":"2023-12-31 23:59:59.000Z"
+         },
+         "benefits":[
+            {
+               "name":"Deductible",
+               "benefitsSystemID":"36e8f131-ff63-4782-9535-a4bbb2467487",
+               "parentCategory":"",
+               "minAge":"0",
+               "maxAge":"999",
+               "ageType":"Years",
+               "components":[
+                  
+               ],
+               "level":"Plan",
+               "type":"Medical",
+               "cpt":[
+                  
+               ],
+               "networks":[
+                  {
+                     "type":"In Network",
+                     "networkCode":"INN",
+                     "costShares":[
+                        {
+                           "benefitType":"Deductible",
+                           "benefitOptDesc":"Deductibles - Individual",
+                           "value":"$1000",
+                           "coverageLevel":"Individual",
+                           "coverageLevelInd":"IND",
+                           "period":"Per Year",
+                           "accumName":"PINDED",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Deductible",
+                           "benefitOptDesc":"Deductibles - Family",
+                           "value":"$2000 Embedded",
+                           "coverageLevel":"Family",
+                           "coverageLevelInd":"FAM",
+                           "period":"Per Year",
+                           "accumName":"PFMDED",
+                           "accumBasis":"Embedded",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false
+                  },
+                  {
+                     "type":"Out of Network",
+                     "networkCode":"OON",
+                     "costShares":[
+                        {
+                           "benefitType":"Deductible",
+                           "benefitOptDesc":"Deductibles - Individual",
+                           "value":"$3000",
+                           "coverageLevel":"Individual",
+                           "coverageLevelInd":"IND",
+                           "period":"Per Year",
+                           "accumName":"NINDED",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Deductible",
+                           "benefitOptDesc":"Deductibles - Family",
+                           "value":"$6000 Embedded",
+                           "coverageLevel":"Family",
+                           "coverageLevelInd":"FAM",
+                           "period":"Per Year",
+                           "accumName":"NFMDED",
+                           "accumBasis":"Embedded",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false
+                  }
+               ],
+               "attributes":[
+                  
+               ],
+               "notes":[
+                  
+               ],
+               "categories":[
+                  
+               ],
+               "related":{
+                  "services":[
+                     
+                  ]
+               },
+               "shared":{
+                  "accum":[
+                     
+                  ]
+               },
+               "placeOfService":[
+                  
+               ],
+               "conditions":[
+                  
+               ],
+               "limitations":[
+                  
+               ],
+               "srvcDefnId":[
+                  
+               ],
+               "hierarchy":[
+                  
+               ]
+            },
+            {
+               "name":"Coinsurance",
+               "benefitsSystemID":"2bc9a24f-8e67-459d-8fc8-3a6b134e585f",
+               "parentCategory":"",
+               "minAge":"0",
+               "maxAge":"999",
+               "ageType":"Years",
+               "components":[
+                  
+               ],
+               "level":"Plan",
+               "type":"Medical",
+               "cpt":[
+                  
+               ],
+               "networks":[
+                  {
+                     "type":"In Network",
+                     "networkCode":"INN",
+                     "costShares":[
+                        {
+                           "benefitType":"Coinsurance",
+                           "benefitOptDesc":"Coinsurance - Plan",
+                           "value":"30%",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Coinsurance",
+                           "benefitOptDesc":"Preventive Level of Coinsurance - Plan",
+                           "value":"0%",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false
+                  },
+                  {
+                     "type":"Out of Network",
+                     "networkCode":"OON",
+                     "costShares":[
+                        {
+                           "benefitType":"Coinsurance",
+                           "benefitOptDesc":"Coinsurance - Plan",
+                           "value":"50%",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Coinsurance",
+                           "benefitOptDesc":"Preventive Level of Coinsurance - Plan",
+                           "value":"0%",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false
+                  }
+               ],
+               "attributes":[
+                  
+               ],
+               "notes":[
+                  
+               ],
+               "categories":[
+                  
+               ],
+               "related":{
+                  "services":[
+                     
+                  ]
+               },
+               "shared":{
+                  "accum":[
+                     
+                  ]
+               },
+               "placeOfService":[
+                  
+               ],
+               "conditions":[
+                  
+               ],
+               "limitations":[
+                  
+               ],
+               "srvcDefnId":[
+                  
+               ],
+               "hierarchy":[
+                  
+               ]
+            },
+            {
+               "name":"Out-of-Pocket Maximum",
+               "benefitsSystemID":"4f1a2661-289e-4fe1-ad77-cf5fae3d64da",
+               "parentCategory":"",
+               "minAge":"0",
+               "maxAge":"999",
+               "ageType":"Years",
+               "components":[
+                  
+               ],
+               "level":"Plan",
+               "type":"Medical",
+               "cpt":[
+                  
+               ],
+               "networks":[
+                  {
+                     "type":"In Network",
+                     "networkCode":"INN",
+                     "costShares":[
+                        {
+                           "benefitType":"Out-of-Pocket Maximum",
+                           "benefitOptDesc":"Out of Pocket Maximum - Individual",
+                           "value":"$4000",
+                           "coverageLevel":"Individual",
+                           "coverageLevelInd":"IND",
+                           "period":"Per Year",
+                           "accumName":"IINOOP",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Out-of-Pocket Maximum",
+                           "benefitOptDesc":"Out of Pocket Maximum - Family",
+                           "value":"$8000 Embedded",
+                           "coverageLevel":"Family",
+                           "coverageLevelInd":"FAM",
+                           "period":"Per Year",
+                           "accumName":"FOOPPBOC",
+                           "accumBasis":"Embedded",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false
+                  },
+                  {
+                     "type":"Out of Network",
+                     "networkCode":"OON",
+                     "costShares":[
+                        {
+                           "benefitType":"Out-of-Pocket Maximum",
+                           "benefitOptDesc":"Out of Pocket Maximum - Individual",
+                           "value":"$10000",
+                           "coverageLevel":"Individual",
+                           "coverageLevelInd":"IND",
+                           "period":"Per Year",
+                           "accumName":"OINOOP",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Out-of-Pocket Maximum",
+                           "benefitOptDesc":"Out of Pocket Maximum - Family",
+                           "value":"$20000 Embedded",
+                           "coverageLevel":"Family",
+                           "coverageLevelInd":"FAM",
+                           "period":"Per Year",
+                           "accumName":"FOOPNPOC",
+                           "accumBasis":"Embedded",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false
+                  }
+               ],
+               "attributes":[
+                  
+               ],
+               "notes":[
+                  
+               ],
+               "categories":[
+                  
+               ],
+               "related":{
+                  "services":[
+                     
+                  ]
+               },
+               "shared":{
+                  "accum":[
+                     
+                  ]
+               },
+               "placeOfService":[
+                  
+               ],
+               "conditions":[
+                  
+               ],
+               "limitations":[
+                  
+               ],
+               "srvcDefnId":[
+                  
+               ],
+               "hierarchy":[
+                  
+               ]
+            },
+            {
+               "name":"Lifetime Maximum",
+               "benefitsSystemID":"5bc2ad27-ae5f-4a53-b303-1ad93e4970de",
+               "parentCategory":"",
+               "minAge":"0",
+               "maxAge":"999",
+               "ageType":"Years",
+               "components":[
+                  
+               ],
+               "level":"Plan",
+               "type":"Medical",
+               "cpt":[
+                  
+               ],
+               "networks":[
+                  {
+                     "type":"In Network",
+                     "networkCode":"INN",
+                     "costShares":[
+                        {
+                           "benefitType":"Lifetime Maximum",
+                           "benefitOptDesc":"Lifetime Maximum",
+                           "value":"Unlimited",
+                           "coverageLevel":"Individual",
+                           "coverageLevelInd":"IND",
+                           "period":"Per Lifetime",
+                           "accumName":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false
+                  },
+                  {
+                     "type":"Out of Network",
+                     "networkCode":"OON",
+                     "costShares":[
+                        {
+                           "benefitType":"Lifetime Maximum",
+                           "benefitOptDesc":"Lifetime Maximum",
+                           "value":"Unlimited",
+                           "coverageLevel":"Individual",
+                           "coverageLevelInd":"IND",
+                           "period":"Per Lifetime",
+                           "accumName":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false
+                  }
+               ],
+               "attributes":[
+                  
+               ],
+               "notes":[
+                  
+               ],
+               "categories":[
+                  
+               ],
+               "related":{
+                  "services":[
+                     
+                  ]
+               },
+               "shared":{
+                  "accum":[
+                     
+                  ]
+               },
+               "placeOfService":[
+                  
+               ],
+               "conditions":[
+                  
+               ],
+               "limitations":[
+                  
+               ],
+               "srvcDefnId":[
+                  
+               ],
+               "hierarchy":[
+                  
+               ]
+            },
+            {
+               "name":"Vision exam (routine)",
+               "benefitsSystemID":"424364e1-8db4-472c-bd00-46ad8cb2e66a",
+               "parentCategory":"Preventive Care",
+               "minAge":"0",
+               "maxAge":"999",
+               "ageType":"Years",
+               "components":[
+                  {
+                     "name":"Vision exam (routine)",
+                     "serviceClassifications":[
+                        
+                     ]
+                  }
+               ],
+               "level":"Service",
+               "type":"Medical",
+               "srvcDefDesc":"Vision exam (routine)",
+               "cpt":[
+                  
+               ],
+               "networks":[
+                  {
+                     "type":"In Network",
+                     "networkCode":"INN",
+                     "costShares":[
+                        {
+                           "benefitType":"Coinsurance",
+                           "benefitOptDesc":"",
+                           "value":"0%",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Copayment",
+                           "benefitOptDesc":"",
+                           "value":"Not Applicable",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Limit",
+                           "benefitOptDesc":"",
+                           "value":"1 Visits",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "period":"Per Year",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"No",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        "Limit : 1 Visits"
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false,
+                     "administrativeType":"Covered",
+                     "scriptId":"f1304dba9eecd3bc407e73569ac485857fdc170fac629257b6b265bc1495ac21|-|eNqLVjdUCMssziwpVo8FABcpA9o="
+                  },
+                  {
+                     "type":"Out of Network",
+                     "networkCode":"OON",
+                     "costShares":[
+                        {
+                           "benefitType":"Coinsurance",
+                           "benefitOptDesc":"",
+                           "value":"0%",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Copayment",
+                           "benefitOptDesc":"",
+                           "value":"Not Applicable",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        },
+                        {
+                           "benefitType":"Limit",
+                           "benefitOptDesc":"",
+                           "value":"1 Visits",
+                           "coverageLevel":"",
+                           "coverageLevelInd":"",
+                           "period":"Per Year",
+                           "rolloverInd":"",
+                           "bsisDesc":"",
+                           "attributes":[
+                              
+                           ],
+                           "bnftInd":"",
+                           "notes":[
+                              
+                           ]
+                        }
+                     ],
+                     "notes":[
+                        
+                     ],
+                     "attributes":[
+                        
+                     ],
+                     "precertRequired":"N",
+                     "deductibleApplies":"No",
+                     "rollToMME":"",
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        "Limit : 1 Visits"
+                     ],
+                     "precertNotes":[
+                        
+                     ],
+                     "processAdminType":false,
+                     "administrativeType":"Covered",
+                     "scriptId":"b0dc5886bce85e71f206d4b206a49d9864e4ba03d9901c893f60f0483302c33a|-|eNqLVjdUCMssziwpVo8FABcpA9o="
+                  }
+               ],
+               "attributes":[
+                  
+               ],
+               "notes":[
+                  {
+                     "type":"note",
+                     "heading":"",
+                     "structure":[
+                        {
+                           "text":"Includes Refractions"
+                        }
+                     ],
+                     "subNotes":[
+                        
+                     ]
+                  },
+                  {
+                     "type":"note",
+                     "heading":"",
+                     "structure":[
+                        {
+                           "text":"No coverage for materials"
+                        }
+                     ],
+                     "subNotes":[
+                        
+                     ]
+                  },
+                  {
+                     "type":"note",
+                     "heading":"",
+                     "structure":[
+                        {
+                           "text":"Services can be rendered by an ophthalmologist or optometrist"
+                        }
+                     ],
+                     "subNotes":[
+                        
+                     ]
+                  }
+               ],
+               "categories":[
+                  {
+                     "category":"PREVENTIVE CARE BENEFITS",
+                     "notes":[
+                        {
+                           "type":"note",
+                           "heading":"",
+                           "structure":[
+                              {
+                                 "text":"(which can fall outside HCR)"
+                              }
+                           ],
+                           "subNotes":[
+                              
+                           ]
+                        }
+                     ],
+                     "otherServices":[
+                        {
+                           "name":"Exam - Routine Adult physical"
+                        },
+                        {
+                           "name":"Exam - Well Child Care"
+                        },
+                        {
+                           "name":"Immunizations - child and adult (routine)"
+                        },
+                        {
+                           "name":"Flu Shot (routine)"
+                        },
+                        {
+                           "name":"Diagnostic X-rays and Lab tests (routine)"
+                        },
+                        {
+                           "name":"Prostate Cancer Screening - PSA (routine)"
+                        },
+                        {
+                           "name":"Colon cancer screenings (routine)"
+                        },
+                        {
+                           "name":"Hearing exam (routine)"
+                        },
+                        {
+                           "name":"Pap smear (routine)"
+                        },
+                        {
+                           "name":"Mammography (routine)"
+                        }
+                     ],
+                     "components":[
+                        {
+                           "name":"PREVENTIVE CARE BENEFITS",
+                           "serviceClassifications":[
+                              
+                           ]
+                        }
+                     ],
+                     "placeOfService":[
+                        
+                     ],
+                     "conditions":[
+                        
+                     ],
+                     "limitations":[
+                        
+                     ]
+                  }
+               ],
+               "related":{
+                  "services":[
+                     {
+                        "type":"inclusion",
+                        "name":"Refractions",
+                        "components":[
+                           
+                        ]
+                     },
+                     {
+                        "type":"exclusion",
+                        "name":"Materials",
+                        "components":[
+                           
+                        ]
+                     },
+                     {
+                        "type":"inclusion",
+                        "name":"Ophthalmologist",
+                        "components":[
+                           
+                        ]
+                     },
+                     {
+                        "type":"inclusion",
+                        "name":"Optometrist",
+                        "components":[
+                           
+                        ]
+                     }
+                  ]
+               },
+               "shared":{
+                  "accum":[
+                     
+                  ]
+               },
+               "placeOfService":[
+                  {
+                     "name":"ALL",
+                     "plosCode":"",
+                     "sourcePlos":""
+                  }
+               ],
+               "diagnosisCode":"VISNNCDX",
+               "diagnosisCodeDesc":"Routine Vision Services",
+               "conditions":[
+                  
+               ],
+               "limitations":[
+                  "1 exam per year"
+               ],
+               "srvcDefnId":[
+                  "VISIONCR",
+                  "VISTSTPRF",
+                  "VSSCRNPRF",
+                  "VSSCRNFAC"
+               ],
+               "hierarchy":[
+                  "TestingSvcs>Professional>Routine>OtherStudies>VisionScreen",
+                  "Physician_MedSvcs>ExamVst>Vision",
+                  "TestingSvcs>Facility>Routine>OtherStudies>VisionScreen",
+                  "TestingSvcs>Professional>VisionTesting"
+               ],
+               "sequenceNumber":"1",
+               "descriptionId":"b526bcd7-5d92-020b-1548-5ee292eacacb"
+            }
+         ]
+      }
+   }
+}"""
