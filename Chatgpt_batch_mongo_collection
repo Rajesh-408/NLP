@@ -1,12 +1,12 @@
 from pymongo import MongoClient
-import multiprocessing
 
-# Define the processing function
-def process_documents(documents):
-    for document in documents:
-        # Process the document here
-        # Replace this with your actual processing logic
-        print(document)
+# Helper function to recursively convert dictionaries to tuples
+def convert_to_hashable(item):
+    if isinstance(item, dict):
+        return tuple((key, convert_to_hashable(value)) for key, value in item.items())
+    if isinstance(item, list):
+        return tuple(convert_to_hashable(value) for value in item)
+    return item
 
 # Establish a connection to the MongoDB instance
 client = MongoClient('mongodb://localhost:27017/')
@@ -15,37 +15,20 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client['your_db_name']
 collection = db['your_collection_name']
 
-batch_size = 1000
+# Initialize a set to store unique hashable values
+unique_values = set()
 
-# Create a cursor with batch size
-cursor = collection.find().batch_size(batch_size)
+# Iterate through the documents in the collection
+for document in collection.find():
+    # Iterate through the values in each document
+    for value in document.values():
+        # Convert value to hashable type and add to the set
+        hashable_value = convert_to_hashable(value)
+        unique_values.add(hashable_value)
 
-# Create a list to store batches
-batches = []
-
-# Fetch and store batches
-while cursor.alive:
-    batch_documents = []
-    for _ in range(batch_size):
-        try:
-            document = cursor.next()
-            batch_documents.append(document)
-        except StopIteration:
-            break
-    
-    if batch_documents:
-        batches.append(batch_documents)
-
-# Close the cursor and MongoDB connection
-cursor.close()
+# Close the MongoDB connection
 client.close()
 
-# Process batches in parallel
-with multiprocessing.Pool() as pool:
-    pool.map(process_documents, batches)
-
-# Calculate and print the total number of processed documents
-total_processed = sum(len(batch) for batch in batches)
-print(f"Total documents processed: {total_processed}")
-
-print("All documents processed.")
+# Print the unique values
+for value in unique_values:
+    print(value)
