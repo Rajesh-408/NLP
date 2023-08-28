@@ -1,4 +1,6 @@
 from pymongo import MongoClient
+import multiprocessing
+import time
 
 # Helper function to recursively convert dictionaries to tuples
 def convert_to_hashable(item):
@@ -8,6 +10,15 @@ def convert_to_hashable(item):
         return tuple(convert_to_hashable(value) for value in item)
     return item
 
+# Define the processing function
+def process_batch(batch_documents):
+    unique_values_batch = set()
+    for document in batch_documents:
+        for value in document.values():
+            hashable_value = convert_to_hashable(value)
+            unique_values_batch.add(hashable_value)
+    return unique_values_batch
+
 # Establish a connection to the MongoDB instance
 client = MongoClient('mongodb://localhost:27017/')
 
@@ -15,24 +26,19 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client['your_db_name']
 collection = db['your_collection_name']
 
-batch_size = 1000  # Adjust the batch size as needed
+batch_size = 1000
+total_documents = collection.count_documents({})
+total_batches = (total_documents + batch_size - 1) // batch_size
 
 # Initialize a set to store unique hashable values
 unique_values = set()
 
-# Iterate through the documents in the collection in batches
-total_documents = collection.count_documents({})
-total_batches = (total_documents + batch_size - 1) // batch_size
-
-for batch_number in range(total_batches):
-    batch_documents = collection.find().skip(batch_number * batch_size).limit(batch_size)
-    
-    for document in batch_documents:
-        # Iterate through the values in each document
-        for value in document.values():
-            # Convert value to hashable type and add to the set
-            hashable_value = convert_to_hashable(value)
-            unique_values.add(hashable_value)
+# Process batches using parallel processing
+with multiprocessing.Pool() as pool:
+    for batch_number in range(total_batches):
+        batch_documents = collection.find().skip(batch_number * batch_size).limit(batch_size)
+        batch_unique_values = pool.apply(process_batch, args=(batch_documents,))
+        unique_values.update(batch_unique_values)
 
 # Close the MongoDB connection
 client.close()
@@ -40,3 +46,8 @@ client.close()
 # Print the unique values
 for value in unique_values:
     print(value)
+
+# Calculate and print processing time
+end_time = time.time()
+processing_time = end_time - start_time
+print(f"Processing time: {processing_time:.2f} seconds")
