@@ -5,78 +5,58 @@ client = MongoClient('mongodb://localhost:27017')
 db = client['your_database_name']
 collection = db['your_collection_name']
 
-# Define batch size
-batch_size = 1000  # Adjust as needed
+# Define JSONPath expressions for field selection
+jsonpath_expressions = [
+    '$.data.field1',  # Replace with your first JSONPath expression
+    '$.data.field2',  # Replace with your second JSONPath expression
+    # Add more JSONPath expressions as needed
+]
 
-# Calculate the total number of documents in the collection
-total_docs = collection.count_documents({})
-
-# Initialize variables to keep track of the processed count and current skip value
-processed = 0
-current_skip = 0
-
-# Define the aggregation pipeline with multiple JSONPath-like expressions in $project
-pipeline = []
-
-while current_skip < total_docs:
-    # Add a $skip stage to skip to the next batch of documents
-    pipeline.append({
-        '$skip': current_skip
-    })
-
-    # Add a $limit stage to process a batch of documents
-    pipeline.append({
-        '$limit': batch_size
-    })
-
-    # Add the $project stage for field selection with JSONPath-like expressions
-    pipeline.append({
+# Create the aggregation pipeline to extract distinct values
+pipeline = [
+    {
         '$project': {
-            'expression1': '$data.field1',  # Replace with your first expression
-            'expression2': '$data.field2',  # Replace with your second expression
-            # Add more expressions as needed
-        }
-    })
-
-    # Add the $group and $project stages for accumulating unique values
-    pipeline.extend([
-        {
-            '$group': {
-                '_id': None,
-                'uniqueValues1': {
-                    '$addToSet': '$expression1'
-                },
-                'uniqueValues2': {
-                    '$addToSet': '$expression2'
-                },
-                # Add more uniqueValues fields for each expression
-            }
-        },
-        {
-            '$project': {
-                '_id': 0,
-                'uniqueValues1': 1,
-                'uniqueValues2': 1,
-                # Include more fields as needed
+            'jsonpath_values': {
+                '$map': {
+                    'input': jsonpath_expressions,
+                    'as': 'expr',
+                    'in': {
+                        '$jsonSchema': {
+                            'expression': '$$expr',
+                            'jsonPath': '$$this'
+                        }
+                    }
+                }
             }
         }
-    ])
+    },
+    {
+        '$unwind': '$jsonpath_values'
+    },
+    {
+        '$group': {
+            '_id': '$jsonpath_values',
+            'distinctValues': {
+                '$addToSet': '$jsonpath_values'
+            }
+        }
+    },
+    {
+        '$project': {
+            '_id': 0,
+            'distinctValues': 1
+        }
+    }
+]
 
-    # Execute the aggregation pipeline for the current batch
-    result = list(collection.aggregate(pipeline))
+# Execute the aggregation pipeline to get distinct values
+result = list(collection.aggregate(pipeline))
 
-    # Process the unique values for the current batch as needed
-    if result:
-        unique_values1 = result[0]['uniqueValues1']
-        unique_values2 = result[0]['uniqueValues2']
-        # Process or store the unique values for the current batch as needed
-        print(unique_values1)
-        print(unique_values2)
-        # Process additional unique values fields
-
-    # Update counters for the next batch
-    processed += len(result)
-    current_skip += batch_size
+# Extract the distinct values from the result
+distinct_values = result[0]['distinctValues']
 
 # Close the MongoDB connection
 client.close()
+
+# Print the distinct values
+print(distinct_values)
