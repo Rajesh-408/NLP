@@ -1,44 +1,82 @@
-pipeline = [
-    {
-        '$group': {
-            '_id': None,  # Group all documents into a single group
-            'allValues': {
-                '$push': {
-                    '$reduce': {
-                        'input': {
-                            '$map': {
-                                'input': {
-                                    '$objectToArray': '$$ROOT'  # Convert document to key-value pairs
-                                },
-                                'as': 'kv',
-                                'in': {
-                                    '$cond': {
-                                        'if': {
-                                            '$isArray': '$$kv.v'  # Check if the value is an array
-                                        },
-                                        'then': '$$kv.v',  # If it's an array, keep it as is
-                                        'else': {
-                                            '$map': {
-                                                'input': {'$split': ['$$kv.v', ',']},  # Split a string by commas
-                                                'as': 'item',
-                                                'in': {'$trim': {'input': '$$item'}}  # Trim whitespace
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        'initialValue': [],
-                        'in': {'$setUnion': ['$$value', ['$$this']]}  # Merge and remove duplicates
-                    }
-                }
+from pymongo import MongoClient
+
+# Connect to your MongoDB instance
+client = MongoClient('mongodb://localhost:27017')
+db = client['your_database_name']
+collection = db['your_collection_name']
+
+# Define batch size
+batch_size = 1000  # Adjust as needed
+
+# Calculate the total number of documents in the collection
+total_docs = collection.count_documents({})
+
+# Initialize variables to keep track of the processed count and current skip value
+processed = 0
+current_skip = 0
+
+# Define the aggregation pipeline with multiple JSONPath-like expressions in $project
+pipeline = []
+
+while current_skip < total_docs:
+    # Add a $skip stage to skip to the next batch of documents
+    pipeline.append({
+        '$skip': current_skip
+    })
+
+    # Add a $limit stage to process a batch of documents
+    pipeline.append({
+        '$limit': batch_size
+    })
+
+    # Add the $project stage for field selection with JSONPath-like expressions
+    pipeline.append({
+        '$project': {
+            'expression1': '$data.field1',  # Replace with your first expression
+            'expression2': '$data.field2',  # Replace with your second expression
+            # Add more expressions as needed
+        }
+    })
+
+    # Add the $group and $project stages for accumulating unique values
+    pipeline.extend([
+        {
+            '$group': {
+                '_id': None,
+                'uniqueValues1': {
+                    '$addToSet': '$expression1'
+                },
+                'uniqueValues2': {
+                    '$addToSet': '$expression2'
+                },
+                # Add more uniqueValues fields for each expression
+            }
+        },
+        {
+            '$project': {
+                '_id': 0,
+                'uniqueValues1': 1,
+                'uniqueValues2': 1,
+                # Include more fields as needed
             }
         }
-    },
-    {
-        '$project': {
-            '_id': 0,  # Exclude the _id field
-            'uniqueValues': '$allValues'  # Rename the field to uniqueValues
-        }
-    }
-]
+    ])
+
+    # Execute the aggregation pipeline for the current batch
+    result = list(collection.aggregate(pipeline))
+
+    # Process the unique values for the current batch as needed
+    if result:
+        unique_values1 = result[0]['uniqueValues1']
+        unique_values2 = result[0]['uniqueValues2']
+        # Process or store the unique values for the current batch as needed
+        print(unique_values1)
+        print(unique_values2)
+        # Process additional unique values fields
+
+    # Update counters for the next batch
+    processed += len(result)
+    current_skip += batch_size
+
+# Close the MongoDB connection
+client.close()
