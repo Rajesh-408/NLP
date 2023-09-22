@@ -3,9 +3,10 @@ import re
 
 # Define the data as a list of strings
 data = [
-    "[('doc.data.benefits.text', 'auxiliary')]\n",
-    "[('doc.data.benefits.type', 'inclusion'),('doc.data.benefits.name', 'coinsurance')]\n",
-    "[('doc.data.benefits.type', 'exclusion'),('doc.data.benefits.name', 'copayment')]\n"
+    "[('doc.data.benefits[118].notes[0].structure[0].text', 'DOES NOT include removal of impacted teeth.')]\n",
+    "[('doc.data.benefits[25].notes[0].structure[0].text', 'Includes Autism Spectrum Disorder, Intellectual Disability, Developmental Delays and Learning Disabilities')]\n",
+    "[('doc.data.benefits[70].related.services[1].type', 'inclusion'), ('doc.data.benefits[70].related.services[1].name', 'Ancillaries')]\n",
+    # Add more data entries as needed
 ]
 
 # Initialize lists to store extracted values
@@ -14,9 +15,9 @@ inclusion_values = []
 exclusion_values = []
 
 # Define regular expressions to extract values
-text_pattern = r"'doc\.data\.benefits\.text', '([^']*)'"
-inclusion_pattern = r"'doc\.data\.benefits\.type', 'inclusion'\),\('doc\.data\.benefits\.name', '([^']*)'"
-exclusion_pattern = r"'doc\.data\.benefits\.type', 'exclusion'\),\('doc\.data\.benefits\.name', '([^']*)'"
+text_pattern = r"'doc\.data\.benefits\[\d+\]\.notes\[\d+\]\.structure\[\d+\]\.text', '([^']*)'"
+inclusion_pattern = r"'doc\.data\.benefits\[\d+\]\.related\.services\[\d+\]\.type', 'inclusion'\), \('doc\.data\.benefits\[\d+\]\.related\.services\[\d+\]\.name', '([^']*)'"
+exclusion_pattern = r"'doc\.data\.benefits\[\d+\]\.related\.services\[\d+\]\.type', 'exclusion'\), \('doc\.data\.benefits\[\d+\]\.related\.services\[\d+\]\.name', '([^']*)'"
 
 # Iterate through the data and extract values
 for item in data:
